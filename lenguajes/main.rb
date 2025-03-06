@@ -21,11 +21,13 @@ def benchmark(n = 300)
   b = generate_matrix(n)
 
   start = Time.now
-  multiply_matrices(a, b)
+  c = multiply_matrices(a, b)
   elapsed_ms = (Time.now - start) * 1000
 
   puts "Tiempo de ejecución: %.3f ms" % elapsed_ms
+  puts "Tamaño de la matriz resultante: #{c.size}x#{c[0].size}"
 end
 
 n = ARGV[0] ? ARGV[0].to_i : 300
 benchmark(n)
+
