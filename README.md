@@ -19,3 +19,5 @@ Ejemplo:
 ./start.sh main.rb
 
 ./start.sh main.cpp
+
+./start.sh Solucion.java
