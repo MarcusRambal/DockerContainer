@@ -19,11 +19,12 @@ def benchmark(n=300):
     B = generate_matrix(n)
 
     start = time.time()
-    multiply_matrices(A, B)
+    C = multiply_matrices(A, B)
     end = time.time()
 
     elapsed_ms = (end - start) * 1000
     print(f"Tiempo de ejecución: {elapsed_ms:.3f} ms")
+    print(f"Tamaño de la matriz resultante: {len(C)}x{len(C[0])}")
 
 if __name__ == "__main__":
     n = int(sys.argv[1]) if len(sys.argv) > 1 else 300
