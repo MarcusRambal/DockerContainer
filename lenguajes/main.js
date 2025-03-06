@@ -23,12 +23,12 @@ function benchmark(n = 300) {
     let B = generateMatrix(n);
 
     let start = performance.now();
-    multiplyMatrices(A, B);
+    let C = multiplyMatrices(A, B);
     let end = performance.now();
 
     console.log(`Tiempo de ejecución: ${(end - start).toFixed(3)} ms`);
+    console.log(`Tamaño de la matriz resultante: ${C.length} x ${C[0].length}`);
 }
 
 const n = process.argv[2] ? parseInt(process.argv[2], 10) : 300;
 benchmark(n);
-
