@@ -24,7 +24,7 @@ case "$extension" in
         nombre_clase="${1%}" 
         comando="sh -c '
             javac /codigo/$archivo || { echo \"Error en la compilación\"; exit 1; }
-            java -cp /codigo/Solucion.class
+            java -cp /codigo/Solucion
         '"
         ;;
     cpp|cc)
