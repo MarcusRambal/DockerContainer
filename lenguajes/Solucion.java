@@ -32,11 +32,12 @@ public class Solucion {
         int[][] B = generateMatrix(n);
 
         long start = System.nanoTime();
-        multiplyMatrices(A, B);
+        int[][] C = multiplyMatrices(A, B);
         long end = System.nanoTime();
 
         double elapsedMs = (end - start) / 1_000_000.0;
         System.out.printf("Tiempo de ejecución: %.3f ms\n", elapsedMs);
+        System.out.printf("Tamaño de la matriz resultante: %d x %d\n", C.length, C[0].length);
     }
 
     public static void main(String[] args) {
@@ -44,3 +45,4 @@ public class Solucion {
         benchmark(n);
     }
 }
+
