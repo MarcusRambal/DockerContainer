@@ -1,5 +1,3 @@
-const fs = require('fs');
-
 function generateMatrix(n) {
     return Array.from({ length: n }, () =>
         Array.from({ length: n }, () => Math.floor(Math.random() * 10))
@@ -25,16 +23,12 @@ function benchmark(n = 300) {
     let B = generateMatrix(n);
 
     let start = performance.now();
-    let C = multiplyMatrices(A, B);
+    multiplyMatrices(A, B);
     let end = performance.now();
 
-    let elapsedMs = (end - start).toFixed(3);
-    let output = `JavaScript: ${elapsedMs} ms\n`;
-
-    fs.writeFileSync('/outputs/javascript_output.txt', output);
-
-    console.log(output);
+    console.log(`Tiempo de ejecución: ${(end - start).toFixed(3)} ms`);
 }
 
 const n = process.argv[2] ? parseInt(process.argv[2], 10) : 300;
 benchmark(n);
+
