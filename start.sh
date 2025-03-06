@@ -22,7 +22,7 @@ case "$extension" in
         ;;
     java)
         lenguaje="openjdk"
-        comando="sh -c 'javac /codigo/$archivo && time -p java -cp /codigo Main'"
+        comando="sh -c 'javac /codigo/$archivo && time -p java -cp /codigo ${1%.java}'"
         ;;
     cpp|cc)
         lenguaje="gcc"
