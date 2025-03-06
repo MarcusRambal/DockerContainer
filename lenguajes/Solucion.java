@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class MatrixMultiplication {
+public class Solucion {
 
     public static int[][] generateMatrix(int n) {
         Random rand = new Random();
@@ -39,7 +39,7 @@ public class MatrixMultiplication {
         System.out.printf("Tiempo de ejecución: %.3f ms\n", elapsedMs);
     }
 
-    public static void Solucion(String[] args) {
+    public static void main(String[] args) {
         int n = (args.length > 0) ? Integer.parseInt(args[0]) : 300;
         benchmark(n);
     }
