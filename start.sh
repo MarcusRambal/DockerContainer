@@ -23,10 +23,8 @@ case "$extension" in
         lenguaje="openjdk"
         nombre_clase="${1%}" 
         comando="sh -c '
-            echo \"Compilando $archivo...\"
             javac /codigo/$archivo || { echo \"Error en la compilación\"; exit 1; }
-            echo \"Ejecución de Solucion...\"
-            java -cp /codigo Solucion
+            java -cp /codigo Solucion.class
         '"
         ;;
     cpp|cc)
