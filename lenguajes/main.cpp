@@ -35,11 +35,12 @@ void benchmark(int n = 300) {
     vector<vector<int>> B = generateMatrix(n);
 
     auto start = high_resolution_clock::now();
-    multiplyMatrices(A, B);
+    vector<vector<int>> C = multiplyMatrices(A, B);
     auto end = high_resolution_clock::now();
 
     double elapsedMs = duration<double, milli>(end - start).count();
     cout << "Tiempo de ejecución: " << elapsedMs << " ms" << endl;
+    cout << "Tamaño de la matriz resultante: " << C.size() << " x " << C[0].size() << endl;
 }
 
 int main(int argc, char* argv[]) {
@@ -47,3 +48,4 @@ int main(int argc, char* argv[]) {
     benchmark(n);
     return 0;
 }
+
