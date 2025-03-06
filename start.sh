@@ -5,10 +5,10 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
-archivo="lenguaje/$1" 
+archivo="lenguajes/$1" 
 
 if [ ! -f "$archivo" ]; then
-    echo "Error: El archivo '$archivo' no existe en la carpeta 'lenguaje/'."
+    echo "Error: El archivo '$archivo' no existe en la carpeta 'lenguajes/'."
     exit 1
 fi
 
