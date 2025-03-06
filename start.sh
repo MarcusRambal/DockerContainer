@@ -20,7 +20,7 @@ case "$extension" in
         comando="python /codigo/$archivo"
         ;;
     java)
-        lenguaje="openjdk::17-alpine"
+        lenguaje="openjdk:17-alpine"
         nombre_clase="${1%}" 
         comando="sh -c 'javac /codigo/$archivo && java /codigo Solucion'"
         ;;
