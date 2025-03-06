@@ -1,4 +1,4 @@
-public class Main {
+public class Solucion {
     public static void main(String[] args) {
         long startTime = System.nanoTime();
 
