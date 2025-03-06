@@ -22,7 +22,7 @@ case "$extension" in
     java)
         lenguaje="openjdk"
         nombre_clase="${1%}" 
-        comando="sh -c 'javac /codigo/$archivo && java /codigo Solucion'"
+        comando="sh -c 'javac /codigo/$archivo && java -cp /codigo Solucion'"
         ;;
     cpp|cc)
         lenguaje="gcc"
