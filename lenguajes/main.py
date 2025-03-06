@@ -1,9 +1,30 @@
+import random
 import time
+import sys
 
-start_time = time.time()
+def generate_matrix(n):
+    return [[random.randint(0, 9) for _ in range(n)] for _ in range(n)]
 
-print("Hola, mundo!")
+def multiply_matrices(A, B):
+    n = len(A)
+    C = [[0] * n for _ in range(n)]
+    for i in range(n):
+        for j in range(n):
+            for k in range(n):
+                C[i][j] += A[i][k] * B[k][j]
+    return C
 
-end_time = time.time()
-elapsed_time = end_time - start_time
-print(f"Tiempo de ejecución: {elapsed_time:.6f}s")
+def benchmark(n=300):
+    A = generate_matrix(n)
+    B = generate_matrix(n)
+
+    start = time.time()
+    multiply_matrices(A, B)
+    end = time.time()
+
+    elapsed_ms = (end - start) * 1000
+    print(f"Tiempo de ejecución: {elapsed_ms:.3f} ms")
+
+if __name__ == "__main__":
+    n = int(sys.argv[1]) if len(sys.argv) > 1 else 300
+    benchmark(n)
