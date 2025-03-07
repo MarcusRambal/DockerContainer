@@ -26,3 +26,10 @@ Ejemplo:
 ./start.sh main.cpp
 
 ./start.sh Solucion.java
+
+
+# Integrantes
+
+-Gabriel Elias Palencia Cure (200180307)
+
+-Marcus Rambal Preston (200179191)
