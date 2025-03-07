@@ -52,7 +52,7 @@ esac
 
 echo "Ejecutando $archivo en un contenedor de $lenguaje..."
 
-# Ejecutar el código dentro de un contenedor Docker con el lenguaje adecuado
+# Ejecutar el código dentro de un contenedor Docker con el lenguaje correspondiente
 salida=$(docker run --rm -v "$(pwd)":/codigo -w /codigo $lenguaje bash -c "$comando")
 
 # Salida
