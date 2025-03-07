@@ -5,14 +5,19 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
+# Definir la ruta del archivo dentro de la carpeta 'lenguajes/'
 archivo="lenguajes/$1"
 
+# Verificar si el archivo existe
 if [ ! -f "$archivo" ]; then
     echo "Error: El archivo '$archivo' no existe en la carpeta 'lenguajes/'."
     exit 1
 fi
 
+# Obtener la extensión (.java, .js... etc) del archivo para determinar el lenguaje
 extension="${archivo##*.}"
+
+#Casos para cada lenguaje
 
 case "$extension" in
     py)
@@ -47,7 +52,9 @@ esac
 
 echo "Ejecutando $archivo en un contenedor de $lenguaje..."
 
+# Ejecutar el código dentro de un contenedor Docker con el lenguaje adecuado
 salida=$(docker run --rm -v "$(pwd)":/codigo -w /codigo $lenguaje bash -c "$comando")
 
+# Salida
 echo "Salida del programa:"
 echo "$salida"
